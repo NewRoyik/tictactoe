@@ -76,7 +76,6 @@ public class Board {
     }
 
     private boolean isPionWinner(Symbol pion) {
-        //Verif Horizontal
         for(int y = 0; y < gridSize; y++) {
             int nbSuite = 0;
             for(int x = 0; x < gridSize; x++) {
@@ -90,7 +89,6 @@ public class Board {
             }
         }
 
-        // Verif vertical
         for(int x = 0; x < gridSize; x++) {
             int nbSuite = 0;
             for(int y = 0; y < gridSize; y++) {
@@ -104,7 +102,6 @@ public class Board {
             }
         }
 
-        //Verif diagonal
         int nbSuite = 0;
         for(int i = 0; i < gridSize; i++) {
             nbSuite = (board[i][i] == pion) ? nbSuite + 1 : 0;
@@ -114,7 +111,6 @@ public class Board {
             return true;
         }
 
-        //Verif diagonal inversée
         nbSuite = 0;
         for(int i = 0; i < gridSize; i++) {
             nbSuite = (board[gridSize- (i+1)][i] == pion) ? nbSuite + 1 : 0;
